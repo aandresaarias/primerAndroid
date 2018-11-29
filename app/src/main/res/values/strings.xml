@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">primerAndroid</string>
+    <string name="saludo">saludando y probando  strings </string>
 </resources>
