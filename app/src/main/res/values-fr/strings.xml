@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">primerAndroid</string>
-    <string name="saludo">primerAndroid</string>
+    <string name="saludo">"bonjour"</string>
 </resources>

@@ -11,7 +11,7 @@
         android:id="@+id/textUno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Saludando Ando"
+        android:text="@string/saludo"
     />
 
     <Button
