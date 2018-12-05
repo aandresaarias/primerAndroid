@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".Activities.MainActivity">
 
     <TextView
         android:id="@+id/textUno"
@@ -21,10 +21,20 @@
         android:text="cambiar texto"
     />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        tools:srcCompat="@tools:sample/avatars"
+    />
+
     <fragment
         android:id="@+id/primerFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        class="com.example.root.primerandroid.FragmentMainActivity"
+        class="com.example.root.primerandroid.Fragments.FragmentMainActivity"
     />
+
+
 </LinearLayout>
