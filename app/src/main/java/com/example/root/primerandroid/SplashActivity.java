@@ -4,8 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.root.primerandroid.Activities.MainActivity;
-import com.example.root.primerandroid.Activities.loginActivity;
+import com.example.root.primerandroid.Activities.LoginActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -24,7 +23,7 @@ public class SplashActivity extends AppCompatActivity
             @Override
             public void run()
             {
-                Intent intent = new Intent(SplashActivity.this, loginActivity.class);
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
