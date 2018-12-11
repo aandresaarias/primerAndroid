@@ -27,8 +27,8 @@ public class LoginActivity extends AppCompatActivity
 
         SharedPreferences sharedPreferences = getSharedPreferences("usuarios", Context.MODE_PRIVATE);
         SharedPreferences.Editor sharedEditor = sharedPreferences.edit();
-        sharedEditor.putString("usuario", "afas");
-        sharedEditor.putString("pass", "afas");
+        //sharedEditor.putString("usuario", "afas");
+        //sharedEditor.putString("pass", "afas");
         sharedEditor.commit();
 
         loginBoton = (Button) findViewById(R.id.loginBoton);

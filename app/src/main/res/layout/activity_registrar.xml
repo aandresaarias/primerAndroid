@@ -1,15 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="50dp"
     tools:context=".Activities.RegistrarActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+    >
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        >
+
+        <EditText
+            android:id="@+id/etNombreRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/etPassRegistrar"
+            android:hint="Contraseña"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        />
+    </android.support.design.widget.TextInputLayout>
+
     <Button
+        android:id="@+id/btnRegistrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="registrar"
+        android:background="@drawable/botones"
+        android:layout_marginTop="15dp"
     />
 
-</android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabRegistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="240dp"
+            android:layout_marginRight="240dp"
+            android:layout_marginBottom="9dp"
+            android:clickable="true"
+            app:srcCompat="?attr/actionModeCloseDrawable"
+        />
+    </RelativeLayout>
+
+</LinearLayout>
+
