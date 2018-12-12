@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/principal"
+            android:title="Principal"
+            android:icon="@mipmap/ic_launcher"
+            android:checked="false"
+            >
+        </item>
+
+        <item
+            android:id="@+id/pendientes"
+            android:title="Pendientes"
+            android:icon="@mipmap/ic_launcher"
+            android:checked="false"
+            >
+        </item>
+
+        <item
+            android:id="@+id/lista"
+            android:title="Lista"
+            android:icon="@mipmap/ic_launcher"
+            android:checked="false"
+            >
+        </item>
+
+
+    </group>
+
+</menu>

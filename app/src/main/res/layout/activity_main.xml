@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Activities.MainActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".Activities.MainActivity"
+    android:id="@+id/drawerActivityMain"
+    >
 
-    <TextView
-        android:id="@+id/textUno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/saludo"
-    />
-
-    <Button
-        android:id="@+id/boton"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="cambiar texto"
-    />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        tools:srcCompat="@tools:sample/avatars"
-    />
+        <include
+            android:id="@+id/toolBarMainActivity"
+            layout="@layout/tool_bar_layout"
+        />
 
-    <fragment
-        android:id="@+id/primerFragment"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="°°°°°°°°°°°|||||||||||otro saludo!!!!!!!!!!!!!!!!!!!!!!"
+        />
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigationViewActivityMain"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        class="com.example.root.primerandroid.Fragments.FragmentMainActivity"
-    />
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/menu"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="#FF000000"
+    >
 
-
-</LinearLayout>
+    </android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>
