@@ -19,11 +19,7 @@
             layout="@layout/tool_bar_layout"
         />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="°°°°°°°°°°°|||||||||||otro saludo!!!!!!!!!!!!!!!!!!!!!!"
-        />
+
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
@@ -34,6 +30,7 @@
         app:menu="@menu/menu"
         app:itemTextColor="@color/white"
         app:itemIconTint="#FF000000"
+        android:layout_gravity="start"
     >
 
     </android.support.design.widget.NavigationView>

@@ -2,4 +2,6 @@
 <resources>
     <string name="app_name"> primerAndroid</string>
     <string name="saludo"> saludando </string>
+    <string name="open"> Open</string>
+    <string name="close"> Close</string>
 </resources>
