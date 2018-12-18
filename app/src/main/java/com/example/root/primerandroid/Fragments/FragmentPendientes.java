@@ -17,7 +17,7 @@ public class FragmentPendientes extends Fragment
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         View rootView;
-        rootView = inflater.inflate(R.layout.fragment_principal,container,false);
+        rootView = inflater.inflate(R.layout.fragment_pendientes,container,false);
         return rootView;
     }
 }

@@ -14,7 +14,7 @@ import com.example.root.primerandroid.R;
 
 
 
-public class fragmentPrincipal extends Fragment
+public class FragmentPrincipal extends Fragment
 {
     @Nullable
     @Override

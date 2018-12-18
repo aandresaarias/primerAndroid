@@ -1,11 +1,7 @@
 package com.example.root.primerandroid.Activities;
 
-import android.os.Build;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
@@ -14,11 +10,15 @@ import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.Toast;
 
 
+import com.example.root.primerandroid.Fragments.FragmentLista;
+import com.example.root.primerandroid.Fragments.FragmentPendientes;
+import com.example.root.primerandroid.Fragments.FragmentPrincipal;
 import com.example.root.primerandroid.R;
+
+import java.security.Principal;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -51,18 +51,22 @@ public class MainActivity extends AppCompatActivity
                 switch(menuItem.getItemId())
                 {
                     case R.id.principal:
-                        FragmentManager manager= getSupportFragmentManager();
-                        FragmentTransaction transaction = manager.beginTransaction();
+                        setFragment(0);
+                        Toast.makeText(getApplicationContext(),"principal fragmento",Toast.LENGTH_SHORT).show();
+
                         
                         break;
 
                     case R.id.pendientes:
+                        setFragment(1);
+                        Toast.makeText(getApplicationContext(),"pendientes",Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.lista:
+                        setFragment(2);
+                        Toast.makeText(getApplicationContext(),"lista",Toast.LENGTH_SHORT).show();
                         break;
                 }
-
 
                 return false;
             }
@@ -88,6 +92,35 @@ public class MainActivity extends AppCompatActivity
 
         actionBarDrawerToggle.syncState();
 
+    }
 
+    public void setFragment(int pos)
+    {
+        FragmentManager manager= getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+
+        switch (pos)
+        {
+            case 0:
+                FragmentPrincipal fragmentPrincipal = new FragmentPrincipal();
+
+                transaction.replace(R.id.fragment,fragmentPrincipal);
+                transaction.commit();
+                break;
+
+            case 1:
+                FragmentLista fragmentLista = new FragmentLista();
+
+                transaction.replace(R.id.fragment,fragmentLista);
+                transaction.commit();
+                break;
+
+            case 2:
+                FragmentPendientes fragmentPendientes = new FragmentPendientes();
+
+                transaction.replace(R.id.fragment,fragmentPendientes);
+                transaction.commit();
+                break;
+        }
     }
 }
