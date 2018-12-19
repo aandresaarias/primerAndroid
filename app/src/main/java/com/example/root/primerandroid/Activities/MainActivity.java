@@ -1,6 +1,7 @@
 package com.example.root.primerandroid.Activities;
 
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity
     Toolbar toolbar;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
+    FloatingActionButton fabActivityMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerActivityMain);
         navigationView = (NavigationView) findViewById(R.id.navigationViewActivityMain);
+        fabActivityMain = (FloatingActionButton) findViewById(R.id.fabMainActivity);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener()
         {
@@ -53,8 +56,6 @@ public class MainActivity extends AppCompatActivity
                     case R.id.principal:
                         setFragment(0);
                         Toast.makeText(getApplicationContext(),"principal fragmento",Toast.LENGTH_SHORT).show();
-
-                        
                         break;
 
                     case R.id.pendientes:
@@ -92,6 +93,14 @@ public class MainActivity extends AppCompatActivity
 
         actionBarDrawerToggle.syncState();
 
+        fabActivityMain.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Toast.makeText(getApplicationContext(),"click en FAB", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     public void setFragment(int pos)
@@ -109,18 +118,20 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case 1:
-                FragmentLista fragmentLista = new FragmentLista();
-
-                transaction.replace(R.id.fragment,fragmentLista);
-                transaction.commit();
-                break;
-
-            case 2:
                 FragmentPendientes fragmentPendientes = new FragmentPendientes();
 
                 transaction.replace(R.id.fragment,fragmentPendientes);
                 transaction.commit();
                 break;
+
+            case 2:
+                FragmentLista fragmentLista = new FragmentLista();
+
+                transaction.replace(R.id.fragment,fragmentLista);
+                transaction.commit();
+                break;
         }
     }
+
+
 }
