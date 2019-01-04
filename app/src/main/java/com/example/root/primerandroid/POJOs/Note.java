@@ -13,6 +13,16 @@ public class Note
         this.body = body;
     }
 
+    public int getId()
+    {
+        return id;
+    }
+
+    public void setId(int id)
+    {
+        this.id = id;
+    }
+
     public String getTittle()
     {
         return tittle;
@@ -32,16 +42,5 @@ public class Note
     {
         this.body = body;
     }
-
-    public int getId()
-    {
-        return id;
-    }
-
-    public void setId(int id)
-    {
-        this.id = id;
-    }
-
 
 }

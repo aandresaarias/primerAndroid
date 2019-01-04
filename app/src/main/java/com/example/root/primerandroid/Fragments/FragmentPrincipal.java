@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.example.root.primerandroid.Adapters.NotesAdapter;
 import com.example.root.primerandroid.POJOs.Note;
 import com.example.root.primerandroid.R;
 
@@ -24,6 +26,8 @@ public class FragmentPrincipal extends Fragment
 {
     RecyclerView recyclerView;
     List<Note>  noteList;
+    NotesAdapter adapter;
+    FloatingActionButton floatingActionButton;
 
     @Nullable
     @Override
@@ -32,13 +36,13 @@ public class FragmentPrincipal extends Fragment
         View rootView;
         rootView = inflater.inflate(R.layout.fragment_principal,container,false);
         return rootView;
-
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
+        floatingActionButton = (FloatingActionButton) view.findViewById(R.id.fabAddNote);
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewPrincipal);
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.VERTICAL,false);
@@ -46,6 +50,10 @@ public class FragmentPrincipal extends Fragment
         recyclerView.setLayoutManager(layoutManager);
 
         getData();
+
+        adapter = new NotesAdapter(getActivity().getApplicationContext(),noteList);
+
+        recyclerView.setAdapter(adapter);
     }
 
     public void getData()

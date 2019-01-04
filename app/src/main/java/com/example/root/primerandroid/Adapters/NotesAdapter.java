@@ -9,7 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.root.primerandroid.Activities.RegistrarActivity;
 import com.example.root.primerandroid.POJOs.Note;
 import com.example.root.primerandroid.R;
 
@@ -40,11 +42,25 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder>
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i)
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position)
     {
-        viewHolder.id.setText(String.valueOf(noteList.get(i).getId()));
-        viewHolder.tittle.setText(String.valueOf(noteList.get(i)));
-        viewHolder.body.setText(String.valueOf(noteList.get(i)));
+
+        viewHolder.id.setText(String.valueOf(noteList.get(position).getId()));
+        viewHolder.tittle.setText(String.valueOf(noteList.get(position).getTittle()));
+        viewHolder.body.setText(String.valueOf(noteList.get(position).getBody()));
+
+        viewHolder.imageView.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                noteList.remove(position);
+                notifyDataSetChanged();
+
+                Toast.makeText(context, "Nota " + position + " eliminado", Toast.LENGTH_LONG).show();
+
+            }
+        });
 
     }
 
