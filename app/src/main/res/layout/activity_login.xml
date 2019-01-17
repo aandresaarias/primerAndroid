@@ -8,14 +8,11 @@
     android:padding="50dp"
     tools:context=".Activities.LoginActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:height="60dp"
-        android:gravity="center"
-        android:text="REGISTRO"
-        android:textSize="22dp"
-    />
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/asohofrucol_png" />
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -27,7 +24,7 @@
             android:id="@+id/etNombreLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre"
+            android:hint="Email"
         />
     </android.support.design.widget.TextInputLayout>
 
