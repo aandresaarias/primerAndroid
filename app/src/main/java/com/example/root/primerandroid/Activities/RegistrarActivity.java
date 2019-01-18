@@ -73,17 +73,22 @@ public class RegistrarActivity extends AppCompatActivity
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task)
                     {
-                        Toast.makeText(RegistrarActivity.this, etNombreRegistro + "registrado",Toast.LENGTH_SHORT).show();
+
+                        if (task.isSuccessful())
+                        {
+                            Toast.makeText(RegistrarActivity.this,  "usuario registrado",Toast.LENGTH_SHORT).show();
+                        }
 
                         if(!task.isSuccessful())
                         {
                             Toast.makeText(RegistrarActivity.this, "Hubo un problema",Toast.LENGTH_LONG).show();
                         }
-                        else
-                            {
-                                Intent intent = new Intent(RegistrarActivity.this, MainActivity.class);
-                                startActivity(intent);
-                            }
+                            else
+                        {
+                            Intent intent = new Intent(RegistrarActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
                     }
                 });
 
