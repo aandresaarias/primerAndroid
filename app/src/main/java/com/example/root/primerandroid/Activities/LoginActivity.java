@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity
 
                         if(!task.isSuccessful())
                         {
-                            Toast.makeText(LoginActivity.this, "Correo o Contraseña incorrecta", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, "Correo o Contraseña incorrectaaaaa", Toast.LENGTH_LONG).show();
                         }
                         else
                         {
